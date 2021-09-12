@@ -1,0 +1,247 @@
+
+@media (min-width: 768px) {
+    .navbar-container {
+        position: sticky;
+        top: 0;
+        overflow-y: auto;
+        height: 100vh;
+    }
+    .navbar-container .navbar {
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        height: 100%;
+    }
+    .navbar-container .navbar-collapse {
+        align-items: flex-start;
+    }
+    .navbar-container .nav {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    .navbar-container .navbar-nav {
+        flex-direction: column !important;
+    }
+
+    .navbar-nav{
+        margin-top: 40px;
+        margin-left: 0 !important;
+    }
+
+    .my-modal{
+        left: 15% !important;
+        top: 200px;
+    }
+
+    .features{
+        margin-top: 70px;
+    }
+}
+
+.navbar img{
+    width:120px;
+}
+
+.navbar-brand{
+    color: #008cff !important;
+}
+
+.navbar{
+    color: white;
+    background: #181818;
+    padding: 2.5%;
+
+}
+
+.content-container{
+    background: #2f2f2f;
+}
+
+
+.nav-item{
+    transition: transform .4s ease;
+}
+
+.navbar-nav{
+    margin-left: 15px;
+}
+
+.navbar-dark .navbar-nav .nav-link{
+    color: white;
+
+}
+
+.nav-link, .nav-item button{
+    display: block;
+    margin-top: 10px;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover{
+    color: #ff9701;
+}
+
+.navbar-container ul li:hover{
+    transform: scale(1.05);
+    color: #ff9701;
+}
+
+.features{
+    color: white;
+    text-align: center;
+    margin-top: 120px;
+}
+
+
+.task-block p{
+    margin: 10px auto 0;
+    text-align: start;
+    padding: 0 10px;
+    color: #2f2f2f;
+}
+
+form, .task-wrap{
+    max-width: 500px;
+    margin: 30px auto ;
+}
+
+.task-block{
+    background: #c2d9fc;
+    color: #181818;
+    padding: 5px 5px 5px 10px;
+    margin: 10px 0;
+    border-radius: 7px;
+}
+
+.form-btn{
+    display: inline-block;
+    margin: 0 5px 0 0;
+}
+
+.btn-block{
+    width: 18%;
+    text-align: end;
+}
+
+.task-title{
+    margin-bottom: 0;
+}
+
+.task-block-header{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 5px 0 10px;
+}
+
+.my-modal{
+    top: 200px;
+}
+
+.option-list{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.points{
+    width: 12%;
+}
+
+.game-option{
+    width: 78%;
+    margin-right: 2%;
+}
+
+.option-item, .option-item-head{
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#head-option{
+    margin-bottom: 10px;
+}
+
+.add-btn{
+    background: #cccccc;
+    border-color: #cccccc;
+    color: #181818 !important;
+}
+
+.add-btn:hover{
+    background: #919191;
+    border-color: #919191 !important;
+}
+
+.delete-option{
+    color: #181818 !important;
+}
+.delete-option:hover, .delete-option:active, .delete-option:focus{
+    color: white !important;
+}
+
+.add-btn:active{
+    background: #4f4f4f !important;
+    color: white !important;
+    border-color: #2f2f2f !important;
+}
+
+.add-btn:focus{
+    background: #cccccc;
+    border-color: #919191 !important;
+}
+
+.delete-option{
+    border-radius: 50%;
+    transition: all 0.4s;
+}
+
+.option-list{
+    width: 100%;
+}
+
+.wrap-del-opt{
+    width: 6%;
+    margin-left: 2%;
+}
+
+.btn-disable{
+    pointer-events: none; /* делаем элемент неактивным для взаимодействия */
+    cursor: default; /*  курсор в виде стрелки */
+    color: #4f4f4f !important;
+    background-color: #cb5f5f;
+    border-color: #cb5f5f;
+}
+
+.break {
+    flex-basis: 100%;
+    height: 0;
+}
+
+.error-option{
+    flex-basis: 100%;
+}
+
+.opt-show{
+    color: #00549a;
+    text-align: start;
+    width: 100%;
+}
+
+.opt-show:hover, .opt-show:focus{
+    text-decoration: none;
+    color: #002038;
+}
+
+.list-options-hide{
+    list-style-type: none;
+    margin: 0px auto 10px;
+    text-align: start;
+    padding: 0 10px;
+    color: #2f2f2f;
+}
+
+.list-options-hide li{
+    padding-left: 10px;
+}
