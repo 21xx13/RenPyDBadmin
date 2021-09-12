@@ -35,13 +35,22 @@ function get_task($id){
     return "Выборы игрока не указаны";
 }
 
-//
-//    function read_count()
-//    {
-//        $res = DBi::$conn->query("SELECT COUNT(*) FROM `citybyid`");
-//        $row = $res->fetch_row();
-//        return $row[0];
-//    }
+
+function read_count()
+{
+    $res = DBi::$conn->query("SELECT COUNT(*) FROM `users`");
+    $row = $res->fetch_row();
+    return $row[0];
+}
+
+function get_n_row($n){
+    $res = DBi::$conn->query("SELECT * FROM `users` LIMIT 1 OFFSET $n");
+    return $res->fetch_assoc();
+}
+
+function get_options_by_id($id){
+    return DBi::$conn->query("SELECT * FROM `task_$id`");
+}
 //
 //    function read_rand_message($id)
 //    {
