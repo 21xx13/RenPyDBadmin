@@ -71,7 +71,7 @@ include "db_func.php";
     global $PASS;
     $_SESSION['success_send'] = "Успешно отправлено!";
     connect_db('localhost', 'root', $PASS, 'test_php');
-    DBi::$conn->query("INSERT INTO `task_info` (`task_name`, `task_text`) VALUES ('$title', '$message')");
+    DBi::$conn->query("INSERT INTO `task_info` (`task_name`, `task_text`, `label`, `create_date`) VALUES ('$title', '$message', '$label', NOW())");
     $table_id = @DBi::$conn->insert_id;
     DBi::$conn->query("CREATE TABLE `task_$table_id` (
     id INT NOT NULL AUTO_INCREMENT,
