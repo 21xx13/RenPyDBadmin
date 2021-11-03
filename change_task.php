@@ -33,12 +33,12 @@ include "db_func.php";
                     }
                     if (!empty($_SESSION['title'])){
                         echo $_SESSION['title'];
-                    }?>" placeholder="Введите название" class="form-control">
+                    }?>" placeholder="Введите название" class="form-control text-field">
                     <div class="text-danger"><?php if (!empty($_SESSION['error_title_change'])) {
                             echo $_SESSION['error_title_change'];
                         } ?></div>
                     <br>
-                    <textarea name="message" rows="5" class="form-control" placeholder="Введите текст задания"><?php if (!empty($_POST['change_task_text'])) {
+                    <textarea name="message" rows="5" class="form-control text-field" placeholder="Введите текст задания"><?php if (!empty($_POST['change_task_text'])) {
                             $_SESSION['message'] = $_POST['change_task_text'];
                         }
                         if (!empty($_SESSION['message'])){
@@ -56,7 +56,8 @@ include "db_func.php";
                         </li>
                         <?php
                         if (empty($_SESSION['options'])){
-                            connect_db('localhost', 'root', '21stopium', 'test_php');
+                            global $PASS;
+                            connect_db('localhost', 'root', $PASS, 'test_php');
                             $task_opt = get_task($_SESSION['id_task']);
                             close_db();
                             if (gettype($task_opt) != "string"){
@@ -74,10 +75,10 @@ include "db_func.php";
 
                         foreach ($_SESSION['options'] as $key => $val){
                             echo '<li class="option-item">';
-                            echo '<input type="text" name="option-'.$key.'" value="'.$val['option'].'" placeholder="Введите выбор игрока" class="form-control game-option">';
-                            echo '<input type="number" name="point-'.$key.'" class="form-control points" min="0" value="'.$val['point'].'">';
+                            echo '<input type="text" name="option-'.$key.'" value="'.$val['option'].'" placeholder="Введите выбор игрока" class="form-control text-field game-option">';
+                            echo '<input type="number" name="point-'.$key.'" class="form-control text-field points" min="0" value="'.$val['point'].'">';
                             echo '<div class="wrap-del-opt">
-                                                    <a class="btn btn-danger delete-option"><i class="fas fa-times"></i></a>
+                                                    <a class="btn btn-danger delete-option"><i class="fas fa-trash-alt"></i></a>
                                                 </div>
                                                 <div class="break"></div>';
 
@@ -92,10 +93,11 @@ include "db_func.php";
                     <a class="btn btn-light form-control add-btn"><i class="fas fa-plus-circle"></i></a>
                     <br>
                     <br>
-                    <a href="tasks.php" class="btn btn-info">Все записи</a>
-                    <button class="btn btn-success" type="submit">Сохранить изменения</button>
-                    <br>
-                    <br>
+                    <div class="wrap-btn-settings">
+                    <a href="tasks.php" class="btn btn-info btn-shrink my-blue-btn">Все записи</a>
+                        <a href="" class="btn btn-danger my-red-btn btn-shrink">Очистить</a>
+                    <button class="btn btn-info my-blue-btn btn-shrink" type="submit">Сохранить</button>
+                    </div>
                     <div class="text-success"><?php if (!empty($_SESSION['success_send_change']))
                             echo $_SESSION['success_send_change'];?></div>
                 </form>

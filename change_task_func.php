@@ -17,14 +17,14 @@ $_SESSION['id_task'] = $id;
 
 
 foreach($_POST as $key => $val) {
-    if (str_contains($key, 'option-') || str_contains($key, 'point-')){
+    if (strpos($key, 'option-') !== false || strpos($key, 'point-') !== false){
         $keyNumber = explode('-', $key)[1];
         if (empty($options[$keyNumber]))
             $options[$keyNumber] = [];
-        if(str_contains($key, 'option-')) {
+        if(strpos($key, 'option-') !== false) {
             $options[$keyNumber]['option'] = $val;
         }
-        else if(str_contains($key, 'point-')) {
+        else if(strpos($key, 'point-') !== false) {
             $options[$keyNumber]['point'] = intval($val);
         }
     }
@@ -48,9 +48,9 @@ foreach($options as $key => $val){
         redirect();
     }
 }
-
-    connect_db('localhost', 'root', '21stopium', 'test_php');
-    DBi::$conn->query("UPDATE `users` SET `bio` = '$message', `name` = '$title' WHERE `id` = $id");
+    global $PASS;
+    connect_db('localhost', 'root', $PASS, 'test_php');
+    DBi::$conn->query("UPDATE `task_info` SET `task_text` = '$message', `task_name` = '$title' WHERE `id` = $id");
     DBi::$conn->query("DROP TABLE `task_$id`");
     DBi::$conn->query("CREATE TABLE `task_$id` (
         id INT NOT NULL AUTO_INCREMENT,

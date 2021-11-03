@@ -29,10 +29,10 @@ document.querySelector(".add-btn").addEventListener('click', () => {
     let optionList = document.querySelector('.option-list');
     let newItem = document.createElement('li');
     newItem.classList.add("option-item");
-    newItem.innerHTML = `<input type="text" name="option-${optionId}" value="" placeholder="Введите выбор игрока" class="form-control game-option">
-                                <input type="number" name="point-${optionId}" class="form-control points" min="0" value="0">
+    newItem.innerHTML = `<input type="text" name="option-${optionId}" value="" placeholder="Введите выбор игрока" class="text-field form-control game-option">
+                                <input type="number"  name="point-${optionId}" class="form-control points text-field" min="0" value="0">
                                 <div class="wrap-del-opt">
-                                    <a class="btn btn-danger delete-option"><i class="fas fa-times"></i></a>
+                                    <a class="btn btn-danger delete-option"><i class="fas fa-trash-alt"></i></a>
                                 </div>
                                 <div class="break"></div>
                                 <div class="text-danger error-option"><?php if (!empty($_SESSION)) {

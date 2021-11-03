@@ -13,6 +13,16 @@
         flex-direction: column;
         height: 100%;
     }
+
+    .btn-block{
+        width: 18%;
+    }
+
+    .task-title{
+        max-width: 80%;
+
+    }
+
     .navbar-container .navbar-collapse {
         align-items: flex-start;
     }
@@ -27,6 +37,31 @@
     .navbar-nav{
         margin-top: 40px;
         margin-left: 0 !important;
+        width: 100%;
+    }
+
+    .navbar{
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .nav-link, .nav-btn-text, .btn-nav-link{
+        padding-left: calc(.5rem + 10%) !important;
+    }
+
+    .nav-btn-active{
+        width: 100%;
+        text-align: left;
+        border-radius: 0;
+    }
+
+
+    .navbar-brand{
+        padding-left: calc(.5rem + 2.5%) !important;
+    }
+
+    .navbar-collapse{
+        width: 25%;
     }
 
     .my-modal{
@@ -37,181 +72,245 @@
     .features{
         margin-top: 70px;
     }
+
+    .wrap-del-opt{
+           width: 9%;
+        }
+
+    .delete-option{
+        width: 100%;
+    }
+
+    .wrap-main .main-hello-text{
+        width: 47%;
+    }
+
+    .table{
+        width: 60%;
+    }
+
+    td{
+        text-align: left;
+        padding-left: 33% !important;
+    }
 }
 
-.navbar img{
-    width:120px;
+@media(max-width: 767px){
+    td{
+        padding-left: 23% !important;
+    }
 }
 
 .navbar-brand{
-    color: #008cff !important;
-}
-
-.navbar{
-    color: white;
-    background: #181818;
-    padding: 2.5%;
-
-}
-
-.content-container{
-    background: #2f2f2f;
-}
-
-
-.nav-item{
-    transition: transform .4s ease;
-}
-
-.navbar-nav{
-    margin-left: 15px;
-}
-
-.navbar-dark .navbar-nav .nav-link{
-    color: white;
-
-}
-
-.nav-link, .nav-item button{
-    display: block;
-    margin-top: 10px;
-}
-
-.navbar-dark .navbar-nav .nav-link:hover{
-    color: #ff9701;
-}
-
-.navbar-container ul li:hover{
-    transform: scale(1.05);
-    color: #ff9701;
-}
-
-.features{
-    color: white;
-    text-align: center;
-    margin-top: 120px;
-}
-
-
-.task-block p{
-    margin: 10px auto 0;
-    text-align: start;
-    padding: 0 10px;
-    color: #2f2f2f;
-}
-
-form, .task-wrap{
-    max-width: 500px;
-    margin: 30px auto ;
-}
-
-.task-block{
-    background: #c2d9fc;
-    color: #181818;
-    padding: 5px 5px 5px 10px;
-    margin: 10px 0;
-    border-radius: 7px;
-}
-
-.form-btn{
-    display: inline-block;
-    margin: 0 5px 0 0;
-}
-
-.btn-block{
-    width: 18%;
-    text-align: end;
-}
-
-.task-title{
-    margin-bottom: 0;
-}
-
-.task-block-header{
-    display: flex;
-    justify-content: space-between;
-    padding: 5px 5px 0 10px;
-}
-
-.my-modal{
-    top: 200px;
-}
-
-.option-list{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.points{
-    width: 12%;
-}
-
-.game-option{
-    width: 78%;
-    margin-right: 2%;
-}
-
-.option-item, .option-item-head{
-    display: flex;
-    margin-bottom: 20px;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-#head-option{
-    margin-bottom: 10px;
-}
-
-.add-btn{
-    background: #cccccc;
-    border-color: #cccccc;
-    color: #181818 !important;
-}
-
-.add-btn:hover{
-    background: #919191;
-    border-color: #919191 !important;
-}
-
-.delete-option{
-    color: #181818 !important;
-}
-.delete-option:hover, .delete-option:active, .delete-option:focus{
     color: white !important;
 }
+        .navbar{
+            color: white;
+            background: #0a0a0a;
+            padding: 2.5%;
 
-.add-btn:active{
-    background: #4f4f4f !important;
+        }
+
+.active-nav{
+    background-color: #3a3a3a !important;
+}
+
+        .content-container{
+            background: #1f1f1f;
+            min-height: 100vh;
+        }
+
+
+        .nav-item{
+            transition: transform .4s ease;
+        }
+
+        .navbar-nav{
+            margin-left: 15px;
+        }
+
+        .navbar-dark .navbar-nav .nav-link{
+            color: white;
+
+        }
+
+        .nav-link, .nav-item button{
+            display: block;
+            margin-top: 10px;
+        }
+
+        .navbar-dark .navbar-nav .nav-link:hover{
+            color: white;
+        }
+
+        .navbar-container ul li:hover{
+            transform: scale(1.05);
+            color: white;
+        }
+
+        .features{
+            color: white;
+            text-align: center;
+            margin-top: 120px;
+        }
+
+
+        .task-block p{
+            margin: 10px auto 0;
+            text-align: start;
+            padding: 0 10px;
+            color: #ffffff;
+        }
+
+        form, .task-wrap{
+            max-width: 500px;
+            margin: 30px auto ;
+        }
+
+        .task-block{
+            background: #3c3c3c;
+            color: #d0d0d0;
+            padding: 5px 5px 5px 10px;
+            margin: 10px 0;
+            border-radius: 7px;
+        }
+
+        .form-btn{
+            display: inline-block;
+            margin: 0 5px 0 0;
+        }
+
+        .btn-block{
+            width: 30%;
+            text-align: end;
+        }
+
+        .task-title{
+            margin-bottom: 0;
+            max-width: 60%;
+            text-align: left;
+        }
+
+        .task-block-header{
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 5px 0 10px;
+        }
+
+        .my-modal{
+            top: 200px;
+        }
+
+        .option-list{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .option-text{
+            color: white;
+        }
+
+        .points{
+            width: 12%;
+        }
+
+        .game-option{
+            width: 74%;
+
+        }
+
+        .option-item, .option-item-head{
+            display: flex;
+            margin-bottom: 20px;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .wrap-btn-settings{
+
+            display: flex;
+            margin-bottom: 20px;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        #head-option{
+            margin-bottom: 10px;
+        }
+
+        .add-btn{
+            background: #cccccc;
+            border-color: #cccccc;
+            color: #181818 !important;
+        }
+
+        .add-btn:hover{
+            background: #919191;
+            border-color: #919191 !important;
+        }
+
+
+        .delete-option:hover, .delete-option:active, .delete-option:focus{
+            color: white !important;
+        }
+
+        .add-btn:active{
+            background: #4f4f4f !important;
+            color: white !important;
+            border-color: #2f2f2f !important;
+        }
+
+        .add-btn:focus{
+            background: #cccccc;
+            border-color: #919191 !important;
+        }
+
+        .delete-option, .my-red-btn{
+            transition: all 0.4s;
+            color: white !important;
+            background-color: #ee5744;
+            border-color: #ee5744;
+        }
+
+        .delete-option:hover, .my-red-btn:hover{
+            background-color: #ec341f;
+            border-color: #ec341f;
+        }
+
+        .redactor-btn{
+            color: white !important;
+            background-color: #028a88;
+            border-color: #028a88;
+        }
+
+.redactor-btn:hover{
+    background-color: #006c6b;
+    border-color: #006c6b;
+}
+
+.my-blue-btn{
     color: white !important;
-    border-color: #2f2f2f !important;
+    background-color: #008a8a;
+    border-color: #008a8a;
 }
 
-.add-btn:focus{
-    background: #cccccc;
-    border-color: #919191 !important;
-}
+        .my-blue-btn:hover{
+            background-color: #006767;
+            border-color: #006767;
+        }
 
-.delete-option{
-    border-radius: 50%;
-    transition: all 0.4s;
-}
+        .option-list{
+            width: 100%;
+        }
 
-.option-list{
-    width: 100%;
-}
 
-.wrap-del-opt{
-    width: 6%;
-    margin-left: 2%;
-}
-
-.btn-disable{
-    pointer-events: none; /* делаем элемент неактивным для взаимодействия */
+        .btn-disable{
+            pointer-events: none; /* делаем элемент неактивным для взаимодействия */
     cursor: default; /*  курсор в виде стрелки */
-    color: #4f4f4f !important;
-    background-color: #cb5f5f;
-    border-color: #cb5f5f;
+    color: #e1e1e1 !important;
+    background-color: #cb655c;
+    border-color: #cb655c;
 }
 
 .break {
@@ -219,19 +318,23 @@ form, .task-wrap{
     height: 0;
 }
 
+.btn-shrink{
+    width: 32%;
+}
+
 .error-option{
     flex-basis: 100%;
 }
 
 .opt-show{
-    color: #00549a;
+    color: #d0d0d0;
     text-align: start;
     width: 100%;
 }
 
 .opt-show:hover, .opt-show:focus{
     text-decoration: none;
-    color: #002038;
+    color: #a1a1a1;
 }
 
 .list-options-hide{
@@ -244,4 +347,105 @@ form, .task-wrap{
 
 .list-options-hide li{
     padding-left: 10px;
+}
+
+.text-field:focus {
+    border-color: #006767;
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.075) inset, 0 0 1px 2px #006767;
+
+}
+
+.main-contact-text{
+    color: white;
+    font-size: 24px;
+    margin-top: 60px;
+}
+
+.contact-link-text{
+    color: white;
+}
+
+.contact-link-text:hover{
+    color: white;
+    text-decoration: none;
+}
+
+.icons li
+{
+    width: 10vh;
+    margin-right: 1em;
+    display: inline-block;
+}
+
+.icons
+{
+    text-align: center;
+    margin-top: 45px;
+}
+
+img {
+    height: auto;
+    width: 100%; !important;
+}
+
+.main-text{
+    text-align: left;
+    font-size: 18px;
+    padding-top: 15px;
+}
+
+.main-hello-text{
+    text-align: left;
+    font-size: 18px;
+    padding-top: 40px;
+
+}
+
+.main-title{
+    text-align: left;
+    font-size: 24px;
+    padding-top: 40px;
+    font-weight: bold;
+}
+
+.body-main{
+    padding: 0 50px;
+}
+
+.wrap-main{
+    display: flex;
+    justify-content: space-between;
+}
+
+.wrap-main .main-hello-text{
+    width: 47%;
+}
+
+.btn-bigger{
+    font-size: 18px;
+    margin-top: 40px;
+    width: 200px;
+}
+
+.table-wrap{
+    margin: 40px auto 0;
+    display: flex;
+    justify-content: center;
+}
+
+.table{
+    max-width: 100%;
+}
+
+td{
+    text-align: left;
+    transition: all 0.4s ease;
+}
+
+td:hover{
+    background-color: #3a3a3a;
+}
+
+.score-link, .score-link:hover{
+    color: white;
 }

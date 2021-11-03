@@ -13,14 +13,19 @@ function connect_db ($host, $user, $pass, $db)
     DBi::$conn->query( "SET CHARSET utf8" );
     return DBi::$conn;
 }
+
+$PASS = '21stopium';
+
+
 function close_db (){
     DBi::$conn->close();
 }
 
 
 function get_tasks(){
-    connect_db('localhost', 'root', '21stopium', 'test_php');
-    $res = DBi::$conn->query("SELECT * FROM `users`");
+    global $PASS;
+    connect_db('localhost', 'root', $PASS, 'test_php');
+    $res = DBi::$conn->query("SELECT * FROM `task_info`");
     if ($res->num_rows > 0){
         return $res;
     }
@@ -38,13 +43,13 @@ function get_task($id){
 
 function read_count()
 {
-    $res = DBi::$conn->query("SELECT COUNT(*) FROM `users`");
+    $res = DBi::$conn->query("SELECT COUNT(*) FROM `task_info`");
     $row = $res->fetch_row();
     return $row[0];
 }
 
 function get_n_row($n){
-    $res = DBi::$conn->query("SELECT * FROM `users` LIMIT 1 OFFSET $n");
+    $res = DBi::$conn->query("SELECT * FROM `task_info` LIMIT 1 OFFSET $n");
     return $res->fetch_assoc();
 }
 
