@@ -8,7 +8,7 @@ include "db_func.php";
     <?php
     include "links.php";
     ?>
-    <title>Главная</title>
+    <title>Все записи</title>
 </head>
 <body>
 <div class="container-fluid">
@@ -34,7 +34,7 @@ include "db_func.php";
                             <a class="nav-link " href="statistics.php"><i class="fas fa-chart-line"></i> Отчёты</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="references.php"><i class="fas fa-info-circle"></i> Справка</li></a>
+                            <a class="nav-link" href="references.php"><i class="fas fa-info-circle"></i> Справка</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="contacts.php"><i class="fas fa-address-book"></i> Контакты</a>
@@ -44,7 +44,6 @@ include "db_func.php";
                         <li class="nav-item btn-nav-link">
                             <a href="index.php" class=" btn btn-info my-blue-btn "><i class="fas fa-plus-circle"></i> Новая запись</a>
                         </li>
-
                     </ul>
                 </div>
             </nav>
@@ -64,6 +63,7 @@ include "db_func.php";
                         $id_input = '<input style="display: none;" name="task_id" value="'.$row['id'].'">';
                         echo '<div class="task-block-header">';
                         echo '<h3 class="task-title">'.$row['task_name'].'</h3>';
+
                         echo '<div class="btn-block">';
                         echo '<button class="btn btn-sm btn-danger my-red-btn" data-toggle="modal" data-target="#myModal_'.$id_modal.'"><i class="fas fa-trash-alt"></i></button>
                 <div id="myModal_'.$id_modal. '" class="my-modal modal fade" tabindex="-1">
@@ -88,11 +88,16 @@ include "db_func.php";
                         echo '<form class="form-btn" action="change_task.php" method="post">';
                         echo $id_input;
                         echo '<input style="display: none;" name="change_title" value="'.$row['task_name'].'">';
+                        echo '<input style="display: none;" name="change_label" value="'.$row['label'].'">';
                         echo '<input style="display: none;" name="change_task_text" value="'.$row['task_text'].'">';
                         echo '<button type="submit" class="btn btn-sm btn-primary redactor-btn"><i class="fas fa-pencil-alt"></i></button></form>';
                         echo '</div>';
                         echo '</div>';
-                        echo '<p>'.$row['task_text'].'</p>';
+                        echo '<div class="date-task">Дата создания: '.date('d.m.Y H:i', strtotime( $row['create_date'])).'</div>';
+                        echo '<p class="label">Label: '.$row['label'].'</p>';
+
+                        echo '<p class="main-text-block">'.$row['task_text'].'</p>';
+
                         echo '<button class="btn btn-link opt-show" data-toggle="collapse" data-target="#options_'.$id_modal.'"><i class="fas fa-caret-down"></i> Выборы игрока</button>';
                         echo '<div class="collapse" id="options_'.$id_modal.'">';
                         if (gettype($task_opt) == "string"){

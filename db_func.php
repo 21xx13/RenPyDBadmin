@@ -25,7 +25,7 @@ function close_db (){
 function get_tasks(){
     global $PASS;
     connect_db('localhost', 'root', $PASS, 'test_php');
-    $res = DBi::$conn->query("SELECT * FROM `task_info`");
+    $res = DBi::$conn->query("SELECT * FROM `task_info` ORDER BY `create_date` DESC, `task_name` ASC ");
     if ($res->num_rows > 0){
         return $res;
     }

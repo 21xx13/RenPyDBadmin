@@ -8,7 +8,7 @@ session_start();
     <?php
     include "links.php";
     ?>
-    <title>Главная</title>
+    <title>Добавление записи</title>
 </head>
 <body>
 <div class="container-fluid">
@@ -33,7 +33,7 @@ session_start();
                             <a class="nav-link " href="statistics.php"><i class="fas fa-chart-line"></i> Отчёты</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="references.php"><i class="fas fa-info-circle"></i> Справка</li></a>
+                            <a class="nav-link" href="references.php"><i class="fas fa-info-circle"></i> Справка</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="contacts.php"><i class="fas fa-address-book"></i> Контакты</a>

@@ -155,7 +155,7 @@
         }
 
 
-        .task-block p{
+        .main-text-block{
             margin: 10px auto 0;
             text-align: start;
             padding: 0 10px;
@@ -296,8 +296,8 @@
 }
 
         .my-blue-btn:hover{
-            background-color: #006767;
-            border-color: #006767;
+            background-color: #007575;
+            border-color: #007575;
         }
 
         .option-list{
@@ -448,4 +448,29 @@ td:hover{
 
 .score-link, .score-link:hover{
     color: white;
+}
+
+.label{
+    font-weight: bold;
+    color: #d0d0d0;
+    margin: 10px auto 0;
+    text-align: start;
+    padding: 0 10px;
+}
+
+.date-task
+{
+    /*font-style: italic;*/
+    font-size: 14px;
+    text-align: start;
+    margin: 3px auto 0;
+    padding: 0 10px;
+}
+
+.text-danger{
+    color: #ee5744 !important;
+}
+
+.text-success{
+    color: #008a8a !important;
 }

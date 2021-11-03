@@ -7,11 +7,14 @@ function redirect(){
     exit();
 }
 $title = htmlspecialchars(trim($_POST['title']));
+$label = htmlspecialchars($_POST['label']);
 $message = htmlspecialchars(trim($_POST['message']));
 $id = $_POST['task_id'];
+$special_labels = ["start", "quit", "after_load", "splashscreen", "before_main_menu", "main_menu", "after_warp"];
 $options = [];
 
 $_SESSION['title'] = $title;
+$_SESSION['label'] = $label;
 $_SESSION['message'] = $message;
 $_SESSION['id_task'] = $id;
 
@@ -36,6 +39,17 @@ if (strlen($title) <= 1){
     $_SESSION['error_title_change'] ="Введите корректное имя";
     redirect();
 }
+else if(preg_match('/^[a-zA-Z0-9_]+$/', $label) < 1)
+{
+    $_SESSION['error_label_change'] = "label не должен содержать пробелов, спец. символов, кириллицу";
+    redirect();
+}
+
+else if(in_array($label, $special_labels))
+{
+    $_SESSION['error_label_change'] = "Уже существует специальная метка с таким названием";
+    redirect();
+}
 
 else if ($message == ""){
     $_SESSION['error_message_change'] = "Пустое сообщение";
@@ -50,7 +64,7 @@ foreach($options as $key => $val){
 }
     global $PASS;
     connect_db('localhost', 'root', $PASS, 'test_php');
-    DBi::$conn->query("UPDATE `task_info` SET `task_text` = '$message', `task_name` = '$title' WHERE `id` = $id");
+    DBi::$conn->query("UPDATE `task_info` SET `task_text` = '$message', `task_name` = '$title', `label` = '$label' WHERE `id` = $id");
     DBi::$conn->query("DROP TABLE `task_$id`");
     DBi::$conn->query("CREATE TABLE `task_$id` (
         id INT NOT NULL AUTO_INCREMENT,

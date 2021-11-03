@@ -10,7 +10,7 @@ include "db_func.php";
     <?php
     include "links.php";
     ?>
-    <title>Главная</title>
+    <title>Редактирование записи</title>
 </head>
 <body>
 <div class="container-fluid">
@@ -36,6 +36,16 @@ include "db_func.php";
                     }?>" placeholder="Введите название" class="form-control text-field">
                     <div class="text-danger"><?php if (!empty($_SESSION['error_title_change'])) {
                             echo $_SESSION['error_title_change'];
+                        } ?></div>
+                    <br>
+                    <input type="text" name="label" value="<?php if (!empty($_POST['change_label'])) {
+                        $_SESSION['label'] = $_POST['change_label'];
+                    }
+                    if (!empty($_SESSION['label'])){
+                        echo $_SESSION['label'];
+                    }?>" placeholder="Введите label для RenPy" class="form-control text-field">
+                    <div class="text-danger"><?php if (!empty($_SESSION['error_label_change'])) {
+                            echo $_SESSION['error_label_change'];
                         } ?></div>
                     <br>
                     <textarea name="message" rows="5" class="form-control text-field" placeholder="Введите текст задания"><?php if (!empty($_POST['change_task_text'])) {
