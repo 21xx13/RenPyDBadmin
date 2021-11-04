@@ -93,7 +93,7 @@ include "db_func.php";
                         echo '<button type="submit" class="btn btn-sm btn-primary redactor-btn"><i class="fas fa-pencil-alt"></i></button></form>';
                         echo '</div>';
                         echo '</div>';
-                        echo '<div class="date-task">Дата создания: '.date('d.m.Y H:i', strtotime( $row['create_date'])).'</div>';
+
                         echo '<p class="label">Label: '.$row['label'].'</p>';
 
                         echo '<p class="main-text-block">'.$row['task_text'].'</p>';
@@ -115,6 +115,7 @@ include "db_func.php";
                             echo '</ul>';
                         }
                         echo '</div>';
+                        echo '<div class="date-task">Дата создания: '.date('d.m.Y H:i', strtotime( $row['create_date'])).'</div>';
                         echo '</div>';
                         $id_modal++;
                     }

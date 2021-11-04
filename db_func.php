@@ -48,6 +48,18 @@ function read_count()
     return $row[0];
 }
 
+function read_count_by_label($label)
+{
+    $res = DBi::$conn->query("SELECT COUNT(*) FROM `task_info` WHERE `label` = '$label'");
+    $row = $res->fetch_row();
+    return $row[0];
+}
+
+function get_n_row_by_label($n, $label){
+    $res = DBi::$conn->query("SELECT * FROM `task_info` WHERE `label` = '$label' LIMIT 1 OFFSET $n");
+    return $res->fetch_assoc();
+}
+
 function get_n_row($n){
     $res = DBi::$conn->query("SELECT * FROM `task_info` LIMIT 1 OFFSET $n");
     return $res->fetch_assoc();
