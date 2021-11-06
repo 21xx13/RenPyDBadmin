@@ -94,7 +94,7 @@ include "db_func.php";
                         echo '</div>';
                         echo '</div>';
 
-                        echo '<p class="label">Label: '.$row['label'].'</p>';
+                        echo '<p class="label">Метка: '.$row['label'].'</p>';
 
                         echo '<p class="main-text-block">'.$row['task_text'].'</p>';
 

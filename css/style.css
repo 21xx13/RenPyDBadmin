@@ -20,7 +20,6 @@
 
     .task-title{
         max-width: 80%;
-
     }
 
     .navbar-container .navbar-collapse {
@@ -89,6 +88,10 @@
         width: 60%;
     }
 
+    .ref-img{
+        width: 60%;
+    }
+
     td{
         text-align: left;
         padding-left: 33% !important;
@@ -98,6 +101,10 @@
 @media(max-width: 767px){
     td{
         padding-left: 23% !important;
+    }
+
+    .ref-img{
+        width: 100%;
     }
 }
 
@@ -383,7 +390,7 @@
     margin-top: 45px;
 }
 
-img {
+.contact-img {
     height: auto;
     width: 100%; !important;
 }
@@ -460,7 +467,6 @@ td:hover{
 
 .date-task
 {
-    /*font-style: italic;*/
     font-size: 14px;
     text-align: start;
     margin: 0 auto 10px;
@@ -473,4 +479,29 @@ td:hover{
 
 .text-success{
     color: #008a8a !important;
+}
+
+.text-link
+{
+    color: #c9c9c9;
+    transition: all .4s ease;
+}
+
+.text-link:hover
+{
+    color:#919191;
+    text-decoration: none;
+}
+
+.ref-img{
+    height: auto;
+}
+
+.ref-img-wrap{
+    text-align: center;
+    margin: 20px 0;
+}
+
+.ref-text{
+    margin: 10px 0;
 }

@@ -49,8 +49,8 @@
                 <div class="main-contact-text">Тогда свяжитесь с нами!</div>
                 <div class="main-contact-text"><a class="contact-link-text" href="mailto:FiveRaccoonsRTF@gmail.com">FiveRaccoonsRTF@gmail.com</a></div>
                 <ul class="icons">
-                    <li><a href="https://vk.com/financialcalculator" target="_blank"><img src="img/vk.png"></a> </li>
-                    <li><a href="https://t.me/FinancialCalculator" target="_blank"><img src="img/tel.png"></a> </li>
+                    <li><a href="https://vk.com/financialcalculator" target="_blank"><img src="img/vk.png" class="contact-img"></a> </li>
+                    <li><a href="https://t.me/FinancialCalculator" target="_blank"><img src="img/tel.png" class="contact-img"></a> </li>
                 </ul>
             </div>
         </div>
