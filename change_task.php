@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "db_func.php";
+include "controls/db_func.php";
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -21,7 +21,7 @@ include "db_func.php";
         <div class="col-md-9 col-lg-10 content-container">
             <div class="features">
                 <h1>Изменение записи</h1>
-                <form action="change_task_func.php" method="post">
+                <form action="controls/change_task_func.php" method="post">
                     <input style="display: none;" name="task_id" value="<?php if (!empty($_POST['task_id'])) {
                         $_SESSION['id_task'] = $_POST['task_id'];
                     }

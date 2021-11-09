@@ -1,5 +1,5 @@
 <?php
-include "db_func.php";
+include "controls/db_func.php";
 global $PASS;
 connect_db('localhost', 'root', $PASS, 'test_php');
 //$offset_task = rand(1, read_count()) - 1;

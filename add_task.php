@@ -49,7 +49,7 @@ session_start();
         <div class="col-md-9 col-lg-10 content-container">
                 <div class="features">
                     <h1 class="add-form-title">Форма для добавления записи</h1>
-                    <form action="check.php" method="post">
+                    <form action="controls/check.php" method="post">
                         <input  type="text" name="title" value="<?php if (!empty($_SESSION['title'])) {
                             echo $_SESSION['title'];
                         } ?>" placeholder="Введите название" class="form-control text-field">
@@ -102,7 +102,7 @@ session_start();
                         <br>
                 <div class="wrap-btn-settings">
                         <a href="tasks.php" class="btn btn-info my-blue-btn btn-shrink">Все записи</a>
-                        <a href="destroy.php" class="btn btn-danger my-red-btn btn-shrink">Очистить</a>
+                        <a href="controls/destroy.php" class="btn btn-danger my-red-btn btn-shrink">Очистить</a>
                         <button class="btn btn-info my-blue-btn btn-shrink" type="submit">Сохранить</button>
                 </div>
                         <div class="text-success"><?php if (!empty($_SESSION)) {

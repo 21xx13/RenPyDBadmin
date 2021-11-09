@@ -3,7 +3,7 @@ include "db_func.php";
 session_start();
 
 function redirect(){
-    header('Location: change_task.php');
+    header('Location: ../change_task.php');
     exit();
 }
 $title = htmlspecialchars(trim($_POST['title']));

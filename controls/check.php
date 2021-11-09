@@ -13,7 +13,7 @@ include "db_func.php";
     }
 
     function redirect(){
-        header('Location: index.php');
+        header('Location: ../add_task.php');
         exit();
     }
     $title = htmlspecialchars(trim($_POST['title']));

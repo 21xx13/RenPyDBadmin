@@ -1,5 +1,5 @@
 <?php
-include "db_func.php";
+include "controls/db_func.php";
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -74,11 +74,11 @@ include "db_func.php";
                                 <button class="close" data-dismiss="modal"><i class="fas fa-times"></i></button>
                             </div>
                             <div class="modal-body" style="color: black;">
-                                <p style="text-align: start !important; color: black;">Вы действительно хотите удалить запись "' .$row['task_name'].'"?</p>
+                                <p style="text-align: start !important; color: black;">Вы действительно хотите удалить запись "' .$row['task_name']. '"?</p>
                                 <br>
                                 <div class="buttons-modal" style="text-align: end !important;">
                                     <button class="btn btn-info btn-sm my-blue-btn " data-dismiss="modal">Отмена</button>
-                                    <form action="delete_task.php" method="post" class="form-btn">'.$id_input.'<button type="submit" class="btn btn-sm btn-danger my-red-btn">Удалить</button>
+                                    <form action="controls/delete_task.php" method="post" class="form-btn">' .$id_input.'<button type="submit" class="btn btn-sm btn-danger my-red-btn">Удалить</button>
                                     </form>
                                 </div>
                             </div>

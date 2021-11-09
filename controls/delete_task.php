@@ -3,7 +3,7 @@
 include "db_func.php";
 
 function redirect(){
-    header('Location: tasks.php');
+    header('Location: ../tasks.php');
     exit();
 }
 global $PASS;
