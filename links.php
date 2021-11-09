@@ -8,4 +8,5 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
 <script src="https://kit.fontawesome.com/32b2c96c0f.js" crossorigin="anonymous"></script>
+<link rel="icon" href="img/window_icon.png"> 
 <link rel="stylesheet" href="css/style.css">
