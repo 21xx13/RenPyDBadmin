@@ -111,12 +111,11 @@
 .navbar-brand{
     color: white !important;
 }
-        .navbar{
-            color: white;
-            background: #0a0a0a;
-            padding: 2.5%;
-
-        }
+.navbar{
+    color: white;
+    background: #0a0a0a;
+    padding: 2.5%;
+}
 
 .active-nav{
     background-color: #3a3a3a !important;
