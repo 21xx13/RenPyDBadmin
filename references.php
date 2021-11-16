@@ -79,25 +79,30 @@
                     <div class="ref-img-wrap"><img src="img/input_form.jpg" class="ref-img"></div>
 
                 </div>
-                <div class="main-title">Заполнение формы записи в БД</div>
+                <div class="main-title">Заполнение формы записи в БД (Черновик)</div>
                 <div class="main-text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores assumenda cumque doloribus nostrum odit praesentium sit. Enim est modi temporibus ullam voluptatem! Amet aspernatur corporis debitis dicta, distinctio ducimus fugiat, id possimus quas quod recusandae reiciendis repellendus suscipit vitae voluptatem. Ab accusamus amet aspernatur debitis dicta, ducimus esse hic iusto laboriosam laudantium nihil nisi officia provident quia quibusdam quo rem.
+                    После заполнения БД вы можете выбрать наиболее удобный для вас формат работы: с удаленной БД или с локальной БД. Разница между этими вариантами подробно указана на Главной странице сервиса.
                 </div>
-                <div class="main-title">Выгрузка скриптов для работы с удаленной БД</div>
+                <div class="main-title">Выгрузка скриптов для работы с удаленной БД (Черновик)</div>
+                <div class="main-text">
+                    Для работы с удаленной БД необходимо файл get_task.rpy поместить в корневую папку новеллы (название_новеллы/game/) В основном скрипте RenPy (script.rpy) необходимо вызвать функцию get_task, передав ей в качестве аргумента название метки (label) (может быть любым, в соответствии с синтаксисом Python) там, где необходимо использовать задание из БД. После вызова функции можно переходить к полученному заданию, для этого пропишите в скрипте оператор call, переходящий к заданию.
+                    Пример вызова функции и переход к заданию
+                    <br>$ get_task(“label_for_email_task”)
+                    <br>call label_for_email
+                </div>
+                <div class="main-title">Выгрузка скриптов для работы с локальной БД (Заглушка)</div>
                 <div class="main-text">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque earum nam obcaecati provident vero. Amet, aut dolorum earum eius ex facere illum libero magnam modi nulla quia quis rem repudiandae! Aliquam atque beatae consequuntur cupiditate dolores, ea et excepturi hic incidunt itaque maxime molestias nam nihil numquam perferendis quam quis quo sapiente similique totam? Ab debitis eius explicabo fuga saepe!
                 </div>
-                <div class="main-title">Выгрузка скриптов для работы с локальной БД</div>
+                <div class="main-title">Скачивание и установка локальной БД (Заглушка)</div>
                 <div class="main-text">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque earum nam obcaecati provident vero. Amet, aut dolorum earum eius ex facere illum libero magnam modi nulla quia quis rem repudiandae! Aliquam atque beatae consequuntur cupiditate dolores, ea et excepturi hic incidunt itaque maxime molestias nam nihil numquam perferendis quam quis quo sapiente similique totam? Ab debitis eius explicabo fuga saepe!
                 </div>
-                <div class="main-title">Скачивание и установка локальной БД</div>
+                <div class="main-title">Подключение выгрузки статистики игроков (Черновик)</div>
                 <div class="main-text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque earum nam obcaecati provident vero. Amet, aut dolorum earum eius ex facere illum libero magnam modi nulla quia quis rem repudiandae! Aliquam atque beatae consequuntur cupiditate dolores, ea et excepturi hic incidunt itaque maxime molestias nam nihil numquam perferendis quam quis quo sapiente similique totam? Ab debitis eius explicabo fuga saepe!
-                </div>
-                <div class="main-title">Подключение выгрузки статистики игроков</div>
-                <div class="main-text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque earum nam obcaecati provident vero. Amet, aut dolorum earum eius ex facere illum libero magnam modi nulla quia quis rem repudiandae! Aliquam atque beatae consequuntur cupiditate dolores, ea et excepturi hic incidunt itaque maxime molestias nam nihil numquam perferendis quam quis quo sapiente similique totam? Ab debitis eius explicabo fuga saepe!
+                    Для отправления статистики необходимо файл save_result.rpy поместить в корневую папку новеллы (название_новеллы/game/) В основном скрипте RenPy (script.rpy) необходимо вызвать функцию save_result(user_name), передав ей в качестве аргумента переменную с именем игрока. Для того, чтобы вы могли различать отчеты своих игроков необходимо прописать в скрипте запрос на ввод имени игрока. Ввод имени игрока осуществляется следующим образом:
+                    <br>$ user_name = renpy.input("Введите имя")
+                    <br>Запросите ввод имени в любом удобном для вас месте (до начала игры/после завершения игры).
                 </div>
             </div>
         </div>

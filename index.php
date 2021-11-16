@@ -52,14 +52,19 @@
                 <div class="wrap-main">
                     <div class="main-hello-text">
                         Удаленная БД: При использовании данного варианта хранения, ваша новелла будет обращаться к БД, расположенной на нашем сервере. Вся внесенная вами информация будет находиться вне игры. Вам не придется скачивать архив, содержащий все задания, но если у вашего игрока не будет доступа в Интернет - обновленные задания он не увидит.
-
+                        <div class="btn-wrap-center">
+                            <a href="game_scripts/get_task.rpy" download="" class="btn btn-info my-blue-btn btn-bigger">Скачать скрипты</a>
+                        </div>
                     </div>
                     <div class="main-hello-text">
                         Локальная БД: В данном случае ваша БД будет храниться в файлах, сопутствующих игре. Вся внесенная вами информация будет скачиваться вместе с новеллой. Этот вариант хранения увеличит объем игры (в зависимости от размера БД). Задания из БД будут обновляться только с полным обновлением вашей новеллы.
-                         </div>
+                        <div class="btn-wrap-center">
+                            <a href="" class="btn btn-info my-blue-btn btn-bigger">Скачать архив</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="btn-wrap">
-                    <a href="references.php" class="btn btn-info my-blue-btn btn-bigger">Инструкция</a>
+                    <a href="references.php" class="btn btn-danger my-red-btn btn-bigger">Инструкция</a>
                 </div>
 
         </div>
