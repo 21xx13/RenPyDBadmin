@@ -339,6 +339,11 @@
 .btn-shrink{
     width: 32%;
 }
+.CodeMirror
+{
+    text-align: start !important;
+    border-radius: 5px;
+}
 
 .error-option{
     flex-basis: 100%;
