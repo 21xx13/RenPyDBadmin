@@ -69,7 +69,7 @@ include "controls/db_func.php";
                         echo $id_input;
                         echo '<input style="display: none;" name="edit_script_title" value="'.$row['task_name'].'">';
                         echo '<input style="display: none;" name="edit_script" value="'.$row['game_script'].'">';
-                        echo '<button type="submit" class="btn btn-sm btn-primary redactor-btn"><i class="fas fa-code"></i></button></form>';
+                        echo '<button type="submit" class="btn btn-sm btn-primary redactor-btn" data-toggle="tooltip" title="Редактировать скрипт задания"><i class="fas fa-code"></i></button></form>';
                         echo '<button class="btn btn-sm btn-danger my-red-btn" data-toggle="modal" data-target="#myModal_'.$id_modal.'"><i class="fas fa-trash-alt"></i></button>
                 <div id="myModal_'.$id_modal. '" class="my-modal modal fade" tabindex="-1">
                     <div class="modal-dialog modal-md">
@@ -130,5 +130,10 @@ include "controls/db_func.php";
         </div>
     </div>
 </div>
+<script>
+    $(document).ready (function (){
+        $('[data-toggle="tooltip"]').tooltip ();
+    });
+</script>
 </body>
 </html>
