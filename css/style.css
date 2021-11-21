@@ -173,6 +173,7 @@
         }
 
 
+
         .main-text-block{
             margin: 10px auto 0;
             text-align: start;
@@ -300,6 +301,9 @@
             color: white !important;
             background-color: #028a88;
             border-color: #028a88;
+            width: 31px;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
         }
 
 .redactor-btn:hover{
@@ -343,6 +347,8 @@
 {
     text-align: start !important;
     border-radius: 5px;
+    height: 100% !important;
+    font-size: 15px;
 }
 
 .error-option{
@@ -515,4 +521,8 @@ td:hover{
 
 .btn-wrap-center{
     text-align: center;
+}
+
+.form-script{
+    max-width: 60%;
 }

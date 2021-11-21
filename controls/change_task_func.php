@@ -1,5 +1,6 @@
 <?php
 include "db_func.php";
+include "parse_func.php";
 session_start();
 
 function redirect(){
@@ -11,27 +12,13 @@ $label = htmlspecialchars($_POST['label']);
 $message = htmlspecialchars(trim($_POST['message']));
 $id = $_POST['task_id'];
 $special_labels = ["start", "quit", "after_load", "splashscreen", "before_main_menu", "main_menu", "after_warp"];
-$options = [];
+$options = parse_options();
 
 $_SESSION['title'] = $title;
 $_SESSION['label'] = $label;
 $_SESSION['message'] = $message;
 $_SESSION['id_task'] = $id;
 
-
-foreach($_POST as $key => $val) {
-    if (strpos($key, 'option-') !== false || strpos($key, 'point-') !== false){
-        $keyNumber = explode('-', $key)[1];
-        if (empty($options[$keyNumber]))
-            $options[$keyNumber] = [];
-        if(strpos($key, 'option-') !== false) {
-            $options[$keyNumber]['option'] = $val;
-        }
-        else if(strpos($key, 'point-') !== false) {
-            $options[$keyNumber]['point'] = intval($val);
-        }
-    }
-}
 
 $_SESSION['options'] = $options;
 

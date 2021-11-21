@@ -1,5 +1,6 @@
 <?php
 include "db_func.php";
+include "parse_func.php";
     session_start();
     $_SESSION['error_title'] = "";
     $_SESSION['error_message'] = "";
@@ -19,21 +20,7 @@ include "db_func.php";
     $title = htmlspecialchars(trim($_POST['title']));
     $message = htmlspecialchars(trim($_POST['message']));
     $label = htmlspecialchars($_POST['label']);
-    $options = [];
-
-    foreach($_POST as $key => $val) {
-        if (strpos($key, 'option-') !== false || strpos($key, 'point-') !==false){
-            $keyNumber = explode('-', $key)[1];
-            if (empty($options[$keyNumber]))
-                $options[$keyNumber] = [];
-            if(strpos($key, 'option-') !== false) {
-                $options[$keyNumber]['option'] = $val;
-            }
-            else if(strpos($key, 'point-') !== false) {
-                $options[$keyNumber]['point'] = intval($val);
-            }
-        }
-    }
+    $options = parse_options();
 
     $_SESSION['title'] = $title;
     $_SESSION['message'] = $message;
@@ -69,9 +56,10 @@ include "db_func.php";
         }
     }
     global $PASS;
+    $script = default_script($label, $message, $options);
     $_SESSION['success_send'] = "Успешно отправлено!";
     connect_db('localhost', 'root', $PASS, 'test_php');
-    DBi::$conn->query("INSERT INTO `task_info` (`task_name`, `task_text`, `label`, `create_date`) VALUES ('$title', '$message', '$label', NOW())");
+    DBi::$conn->query("INSERT INTO `task_info` (`task_name`, `task_text`, `label`, `create_date`, `game_script`) VALUES ('$title', '$message', '$label', NOW(), '$script')");
     $table_id = @DBi::$conn->insert_id;
     DBi::$conn->query("CREATE TABLE `task_$table_id` (
     id INT NOT NULL AUTO_INCREMENT,

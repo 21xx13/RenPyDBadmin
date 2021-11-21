@@ -65,6 +65,11 @@ include "controls/db_func.php";
                         echo '<h3 class="task-title">'.$row['task_name'].'</h3>';
 
                         echo '<div class="btn-block">';
+                        echo '<form class="form-btn" action="edit_script.php" method="post">';
+                        echo $id_input;
+                        echo '<input style="display: none;" name="edit_script_title" value="'.$row['task_name'].'">';
+                        echo '<input style="display: none;" name="edit_script" value="'.$row['game_script'].'">';
+                        echo '<button type="submit" class="btn btn-sm btn-primary redactor-btn"><i class="fas fa-code"></i></button></form>';
                         echo '<button class="btn btn-sm btn-danger my-red-btn" data-toggle="modal" data-target="#myModal_'.$id_modal.'"><i class="fas fa-trash-alt"></i></button>
                 <div id="myModal_'.$id_modal. '" class="my-modal modal fade" tabindex="-1">
                     <div class="modal-dialog modal-md">
@@ -97,7 +102,6 @@ include "controls/db_func.php";
                         echo '<p class="label">Метка: '.$row['label'].'</p>';
 
                         echo '<p class="main-text-block">'.$row['task_text'].'</p>';
-
                         echo '<button class="btn btn-link opt-show" data-toggle="collapse" data-target="#options_'.$id_modal.'"><i class="fas fa-caret-down"></i> Выборы игрока</button>';
                         echo '<div class="collapse" id="options_'.$id_modal.'">';
                         if (gettype($task_opt) == "string"){

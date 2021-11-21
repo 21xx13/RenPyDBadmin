@@ -32,6 +32,15 @@ function get_tasks(){
     return "Записей нет";
 }
 
+function get_task_by_id($id){
+    global $PASS;
+    connect_db('localhost', 'root', $PASS, 'test_php');
+    $res = DBi::$conn->query("SELECT * FROM `task_info`WHERE `id` = $id");
+    close_db();
+    return $res->fetch_assoc();
+
+}
+
 function get_task($id){
     $result = DBi::$conn->query("SELECT * FROM `task_$id`");
     if ($result){

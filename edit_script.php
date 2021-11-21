@@ -1,5 +1,6 @@
 <?php
 session_start();
+include "controls/db_func.php";
 ?>
     <!DOCTYPE html>
     <html lang="ru">
@@ -23,17 +24,32 @@ session_start();
         <div class="col-md-9 col-lg-10 content-container">
             <div class="features">
                 <h1 class="add-form-title">Форма редактирования скрипта</h1>
-                <form action="controls/check.php" method="post">
-                    <input  type="text" name="title" value="<?php if (!empty($_SESSION['title'])) {
+                <form class="form-script" action="controls/edit_script_func.php" method="post">
+                    <input style="display: none;" name="task_id" value="<?php if (!empty($_POST['task_id'])) {
+                        $_SESSION['id_task'] = $_POST['task_id'];
+                    }
+                    if (!empty($_SESSION['id_task'])){
+                        echo $_SESSION['id_task'];
+                        $script_db = get_task_by_id($_SESSION['id_task'])['game_script'];
+                    }?>">
+                    <input type="text" name="title" value="<?php if (!empty($_POST['edit_script_title'])) {
+                        $_SESSION['title'] = $_POST['edit_script_title'];
+                    }
+                    if (!empty($_SESSION['title'])){
                         echo $_SESSION['title'];
-                    } ?>" placeholder="Введите название" class="form-control text-field">
-                    <div class="text-danger"><?php if (!empty($_SESSION)) {
-                            echo $_SESSION['error_title'];
+                    }?>" placeholder="Введите название" class="form-control text-field">
+                    <div class="text-danger"><?php if (!empty($_SESSION['error_title_edit_script'])) {
+                            echo $_SESSION['error_title_edit_script'];
                         } ?></div>
                     <br>
-                    <textarea id="code" name="code"></textarea>
-                    <div class="text-danger"><?php if (!empty($_SESSION)) {
-                            echo $_SESSION['error_message'];
+                    <textarea id="code" name="code"><?php if (!empty($script_db)) {
+                            $_SESSION['script'] = $script_db;
+                        }
+                        if (!empty($_SESSION['script'])){
+                            echo $_SESSION['script'];
+                        }?></textarea>
+                    <div class="text-danger"><?php if (!empty($_SESSION['error_script'])) {
+                            echo $_SESSION['error_script'];
                         } ?></div>
                     <br>
                     <div class="wrap-btn-settings">
@@ -41,15 +57,16 @@ session_start();
                         <a href="" class="btn btn-danger my-red-btn btn-shrink">Очистить</a>
                         <button class="btn btn-info my-blue-btn btn-shrink" type="submit">Сохранить</button>
                     </div>
-                    <div class="text-success"><?php if (!empty($_SESSION)) {
-                            echo $_SESSION['success_send'];
+                    <div class="text-success"><?php if (!empty($_SESSION['success_send_edit'])) {
+                            echo $_SESSION['success_send_edit'];
                         } ?></div>
                 </form>
             </div>
+
         </div>
     </div>
 </div>
-
+<?php session_destroy();?>
 <script>
     let editor = CodeMirror.fromTextArea(document.getElementById("code"), {
         mode: {name: "python",
@@ -60,5 +77,6 @@ session_start();
         matchBrackets: true
     });
 </script>
+
 </body>
 </html>
