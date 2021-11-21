@@ -104,11 +104,17 @@ session_start();
                         <a href="tasks.php" class="btn btn-info my-blue-btn btn-shrink">Все записи</a>
                         <a href="controls/destroy.php" class="btn btn-danger my-red-btn btn-shrink">Очистить</a>
                         <button class="btn btn-info my-blue-btn btn-shrink" type="submit">Сохранить</button>
-                </div>
-                        <div class="text-success"><?php if (!empty($_SESSION)) {
-                                echo $_SESSION['success_send'];
-                            } ?></div>
-                    </form>
+                </div></form>
+                    <div class="text-success"><?php if (!empty($_SESSION['success_send'])) {
+                            echo $_SESSION['success_send'];
+                            if (!empty($_SESSION['last_id'])){
+                                echo '<br><form class="form-btn" action="edit_script.php" method="post">';
+                                echo '<input style="display: none;" name="task_id" value="'.$_SESSION['last_id'].'">';
+                                echo '<button type="submit" class="btn btn-link my-btn-link">Перейти к редактированию скрипта</button></form>';
+                            }
+
+                        } ?></div>
+                    <br>
                 </div>
         </div>
     </div>

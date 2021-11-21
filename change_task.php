@@ -108,9 +108,18 @@ include "controls/db_func.php";
                         <a href="" class="btn btn-danger my-red-btn btn-shrink">Очистить</a>
                     <button class="btn btn-info my-blue-btn btn-shrink" type="submit">Сохранить</button>
                     </div>
-                    <div class="text-success"><?php if (!empty($_SESSION['success_send_change']))
-                            echo $_SESSION['success_send_change'];?></div>
+
                 </form>
+                <div class="text-success"><?php if (!empty($_SESSION['success_send_change'])){
+                        echo $_SESSION['success_send_change'];
+                        if (!empty($_SESSION['id_task'])){
+                            echo '<br><form class="form-btn" action="edit_script.php" method="post">';
+                            echo '<input style="display: none;" name="edit_script_title" value="'.$_SESSION['title'].'">';
+                            echo '<input style="display: none;" name="task_id" value="'.$_SESSION['id_task'].'">';
+                            echo '<button type="submit" class="btn btn-link my-btn-link">Перейти к редактированию скрипта</button></form>';
+                        }
+                    }
+                    ?></div>
             </div>
         </div>
     </div>

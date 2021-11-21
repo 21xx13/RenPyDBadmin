@@ -73,4 +73,5 @@ include "parse_func.php";
         DBi::$conn->query("INSERT INTO `task_$table_id` (`gameoption`, `points`) VALUES ('$opt', '$point')");
     }
     close_db();
+    $_SESSION['last_id'] = $table_id;
     redirect();

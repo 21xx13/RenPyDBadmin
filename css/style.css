@@ -501,8 +501,18 @@ td:hover{
     transition: all .4s ease;
 }
 
+.my-btn-link{
+    color: #008a8a;
+    transition: all .4s ease;
+}
+
 .text-link:hover{
     color:#919191;
+    text-decoration: none;
+}
+
+.my-btn-link:hover{
+    color: #007575;
     text-decoration: none;
 }
 
