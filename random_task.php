@@ -1,5 +1,6 @@
 <?php
 include "controls/db_func.php";
+include "controls/parse_func.php";
 global $PASS;
 connect_db('localhost', 'root', $PASS, 'test_php');
 //$offset_task = rand(1, read_count()) - 1;
@@ -11,6 +12,8 @@ $task = get_n_row_by_label($offset_task, $label);
 close_db();
 
 echo $task['game_script'];
+
+print_r(parse_script($task['game_script']));
 //echo "label ".$task['label'].":
 //
 //    \"".$task['task_text']."\"

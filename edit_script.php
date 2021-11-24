@@ -30,7 +30,10 @@ include "controls/db_func.php";
                     }
                     if (!empty($_SESSION['id_task'])){
                         echo $_SESSION['id_task'];
+                        global $PASS;
+                        connect_db('localhost', 'root', $PASS, 'test_php');
                         $script_db = get_task_by_id($_SESSION['id_task'])['game_script'];
+                        close_db();
                     }?>">
                     <input type="text" name="title" value="<?php if (!empty($_POST['edit_script_title'])) {
                         $_SESSION['title'] = $_POST['edit_script_title'];

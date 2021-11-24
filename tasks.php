@@ -70,7 +70,7 @@ include "controls/db_func.php";
                         echo '<input style="display: none;" name="edit_script_title" value="'.$row['task_name'].'">';
                         echo '<input style="display: none;" name="edit_script" value="'.$row['game_script'].'">';
                         echo '<button type="submit" class="btn btn-sm btn-primary redactor-btn" data-toggle="tooltip" title="Редактировать скрипт задания"><i class="fas fa-code"></i></button></form>';
-                        echo '<button class="btn btn-sm btn-danger my-red-btn" data-toggle="modal" data-target="#myModal_'.$id_modal.'"><i class="fas fa-trash-alt"></i></button>
+                        echo '<button class="btn btn-sm btn-danger my-red-btn" data-toggle="modal" title="Удалить" data-target="#myModal_'.$id_modal.'"><i class="fas fa-trash-alt"></i></button>
                 <div id="myModal_'.$id_modal. '" class="my-modal modal fade" tabindex="-1">
                     <div class="modal-dialog modal-md">
                         <div class="modal-content">
@@ -95,7 +95,7 @@ include "controls/db_func.php";
                         echo '<input style="display: none;" name="change_title" value="'.$row['task_name'].'">';
                         echo '<input style="display: none;" name="change_label" value="'.$row['label'].'">';
                         echo '<input style="display: none;" name="change_task_text" value="'.$row['task_text'].'">';
-                        echo '<button type="submit" class="btn btn-sm btn-primary redactor-btn"><i class="fas fa-pencil-alt"></i></button></form>';
+                        echo '<button type="submit" class="btn btn-sm btn-primary redactor-btn" data-toggle="tooltip" title="Редактировать задание"><i class="fas fa-pencil-alt"></i></button></form>';
                         echo '</div>';
                         echo '</div>';
 
@@ -133,6 +133,7 @@ include "controls/db_func.php";
 <script>
     $(document).ready (function (){
         $('[data-toggle="tooltip"]').tooltip ();
+        $('[data-toggle="modal"]').tooltip ();
     });
 </script>
 </body>

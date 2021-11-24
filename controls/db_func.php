@@ -33,10 +33,7 @@ function get_tasks(){
 }
 
 function get_task_by_id($id){
-    global $PASS;
-    connect_db('localhost', 'root', $PASS, 'test_php');
     $res = DBi::$conn->query("SELECT * FROM `task_info`WHERE `id` = $id");
-    close_db();
     return $res->fetch_assoc();
 
 }
