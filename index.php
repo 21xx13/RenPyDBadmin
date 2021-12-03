@@ -59,7 +59,36 @@
                     <div class="main-hello-text">
                         Локальная БД: В данном случае ваша БД будет храниться в файлах, сопутствующих игре. Вся внесенная вами информация будет скачиваться вместе с новеллой. Этот вариант хранения увеличит объем игры (в зависимости от размера БД). Задания из БД будут обновляться только с полным обновлением вашей новеллы.
                         <div class="btn-wrap-center">
-                            <a href="" class="btn btn-info my-blue-btn btn-bigger">Скачать архив</a>
+                            <?php
+                            include "controls/db_func.php";
+                            global $PASS;
+                            connect_db('localhost', 'root', $PASS, 'test_php');
+                            $res = DBi::$conn->query("SELECT * FROM `task_info` ORDER BY `label`");
+                            $DIR = "game_scripts/local.zip";
+                            if ($res->num_rows > 0) {
+                                if(file_exists($DIR))
+                                    unlink($DIR);
+                                $zip = new ZipArchive();
+                                $prev_label = "";
+                                $count  = 1;
+                                $zip->open($DIR, ZipArchive::CREATE|ZipArchive::OVERWRITE);
+                                while ($row = $res->fetch_assoc()) {
+                                    if ($prev_label == $row['label'])
+                                        $count++;
+                                    else $count = 1;
+
+                                    $label = $row['label'];
+                                    $zip->addFromString("tasks/$label/$count.rpy", $row['game_script']);
+
+                                    $prev_label = $row['label'];
+                                }
+                                $zip->addFile("game_scripts/get_task.rpy", 'get_task.rpy');
+                                $zip->close();
+                            }
+                            close_db();
+                            ?>
+                            <a href="game_scripts/local.zip" download="" class="btn btn-info my-blue-btn btn-bigger">Скачать архив</a>
+
                         </div>
                     </div>
                 </div>
