@@ -14,8 +14,6 @@ function connect_db ($host, $user, $pass, $db)
     return DBi::$conn;
 }
 
-$PASS = '21stopium';
-
 
 function close_db (){
     DBi::$conn->close();
